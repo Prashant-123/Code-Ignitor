@@ -1,0 +1,153 @@
+body {
+    background-color: #F3EBF6;
+    font-family: 'Raleway', sans-serif;
+}
+
+.nav-heading {
+    display: block;
+    text-align: center;
+    margin: 0.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: purple;
+    font-size: 20px
+}
+
+.main {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 400px;
+    margin: 10em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    word-wrap: break-word;
+}
+
+.heading {
+    padding-top: 40px;
+    color: #8C55AA;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.email {
+    width: 76%;
+    display: block;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-left: 46px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 1.5em;
+}
+
+.pass {
+    width: 76%;
+    display: block;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-left: 46px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    }
+
+.email_label {
+    width: 76%;
+    display: block;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin-left: 46px;  
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+}
+
+.row {
+    margin-top: 2em;
+}
+
+.pass_label {
+    width: 76%;
+    display: block;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin-left: 46px;  
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+}
+
+form.form1 {
+    padding-top: 30px;
+}
+
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18);
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 35%;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.logout {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    margin-top: 2em;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 35%;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+
+.ripple:hover {
+  background: #E040FB radial-gradient(circle, transparent 1%, #9C27B0 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+}
