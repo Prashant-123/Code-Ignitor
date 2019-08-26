@@ -17,7 +17,7 @@
 
 
 <div class="main">
-    <form id="login-form" class="form1" action="<?php echo base_url()."login/Authenticate"?>" method="POST">
+    <form id="login-form" class="form1" method="POST">
         <p class="heading" align="center">Log In</p>
 
         <input placeholder="Email" class="email" type="email" name="email" required><br>

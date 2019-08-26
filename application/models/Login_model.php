@@ -8,14 +8,38 @@ class Login_model extends CI_Model {
     }
 
     public function login($email, $password) {
-        $this->db->select('password');
-        $this->db->from('students');
-        $this->db->where('email', $email);
-        return $this->db->get()->row('password') == $password;
-    }
 
-    public function test() {
-        echo json_encode($this->db->query('SELECT * FROM students')->result_array());
+        $success = FALSE;
+        $message = "";
+        $url = "";
+
+        header('Content-type: application/json');
+
+        $sql = "SELECT password FROM students WHERE email = ?";
+        $result = $this->db->query($sql, array($email))->result();
+
+        if(sizeof($result) == 0) {
+            $success = FALSE;
+            $message = 'User doesn\'t exist';
+        } else {
+            if($result[0]->password == $password) {
+                $success = TRUE;
+                $message = "User Exists";
+                $url = "dashboard";
+
+                set_cookie("email", $email, 3600);
+                set_cookie("password", $password, 3600);
+
+            } else {
+                $success = FALSE;   
+                $message = "Authentication Failed";
+                }
+        }
+        return json_encode([
+            "success" => $success,
+            "message" => $message,
+            "url" => $url
+        ]);
     }
 }
 
