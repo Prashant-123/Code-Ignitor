@@ -12,22 +12,24 @@
 <body>
     
 <div class="w3-bar w3-border w3-card-4 w3-light-grey">
-    <span class="nav-heading">SignIn Form</span>
+    <span class="nav-heading">SignUp Form</span>
 </div>
 
 
 <div class="main">
-    <form id="login-form" class="form1" action="<?php echo base_url()."login/Authenticate"?>" method="POST">
-        <p class="heading" align="center">Log In</p>
+    <form id="login-form" class="form1" action="<?php echo base_url()."signup/submit"?>" method="POST">
+        <p class="heading" align="center">Enter your Details</p>
 
+        <input placeholder="Name" class="email" type="text" name="name" required><br>
+        <span class="error" id="email-error"></span>
         <input placeholder="Email" class="email" type="email" name="email" required><br>
         <span class="error" id="email-error"></span>
-        <input placeholder="Password" class="pass" minlength="4" type="password" name="password" required><br>
+        <input placeholder="Password" class="pass" minlength="6" type="password" name="password" required><br>
         <span class="error" id="pwd-error"></span>
         <br>
-        <input class="submit ripple" name="submit" type="submit">
+        <input placeholder="Sign Up" class="submit ripple" name="submit" type="submit">
     </form>
-    <label id="signup" class="signup-btn"> New User? SignUp here</label>
+    <!-- <label id="signup" class="signup-btn"> New User? SignUp here</label> -->
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
