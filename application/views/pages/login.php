@@ -5,31 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href= <?php echo $this->config->item('assets')."css/style.css" ?>>
-    <title>Login Page</title>
+	<link href="<? echo base_url()."assets/css/style.css"?>">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<title>Login Page</title>
 </head>
+<style>
+	* {
+		font-size: 100%;
+		font-family: 'Raleway';
+	}
+</style>
 <body>
-    
-<div class="w3-bar w3-border w3-card-4 w3-light-grey">
-    <span class="nav-heading">SignIn Form</span>
-</div>
+
+<!-- As a link -->
+<nav class="navbar navbar-light bg-light shadow">
+	<a class="navbar-brand" href="#">SignIn Form Demo</a>
+</nav>
 
 
-<div class="main">
-    <form id="login-form" class="form1" method="POST">
-        <p class="heading" align="center">Log In</p>
+<div class="container">
+    <form id="login-form" method="POST">
+        <p class="my-5 font-weight-bold" align="center">Log In</p>
 
-        <input placeholder="Email" class="email" type="email" name="email" required><br>
-        <span class="error" id="email-error"></span>
-        <input placeholder="Password" class="pass" minlength="4" type="password" name="password" required><br>
-        <span class="error" id="pwd-error"></span>
-        <br>
-        <input class="submit ripple" name="submit" type="submit">
+		<div class="form-group">
+			<div class="form-row">
+				<label for="email-input">Email address</label>
+				<input type="email" class="form-control" id="email-input" placeholder="Enter email">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="form-row">
+				<label for="pass-input">Password</label>
+				<input type="password" class="form-control" id="pass-input" placeholder="Enter Password">
+			</div>
+		</div>
+
+        <input id="submit" class="ripple btn btn-primary col-sm-12" name="submit" type="submit">
     </form>
-    <label id="signup" class="signup-btn"> New User? SignUp here</label>
+    <label id="signup" class="signup-btn btn btn-link col-sm-12"> New User? SignUp here</label>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url()."assets/js/login.js"?>"></script>
 </html>

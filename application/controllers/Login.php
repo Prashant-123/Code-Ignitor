@@ -7,7 +7,7 @@ class Login extends MY_Controller {
 	}
 
 	public function index() {
-		if(get_cookie('is_logged_in')) redirect(base_url() . "dashboard");
+		if(get_cookie('is_logged_in') == TRUE) redirect(base_url() . "dashboard");
 		else $this->_view('pages/login');
 	}	
 
@@ -23,3 +23,4 @@ class Login extends MY_Controller {
 		redirect(base_url());
 	}
 }
+

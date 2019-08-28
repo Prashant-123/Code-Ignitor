@@ -36,11 +36,11 @@ class Login_model extends CI_Model {
                 $message = "Authentication Failed";
                 }
         }
-        return json_encode([
+        return json_encode(array(
             "success" => $success,
             "message" => $message,
             "url" => $url
-        ]);
+        ));
     }
 }
 
