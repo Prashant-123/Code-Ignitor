@@ -1,14 +1,14 @@
 <?php 
-class Login extends CI_controller {
+class Login extends MY_Controller {
 
 	public function __construct() {
 		parent:: __construct();
-		$this->load->model('login_model');
+		$this->_model('login_model');
 	}
 
 	public function index() {
 		if(get_cookie('is_logged_in')) redirect(base_url() . "dashboard");
-		else $this->load->view('pages/login');
+		else $this->_view('pages/login');
 	}	
 
 	public function Authenticate() {
