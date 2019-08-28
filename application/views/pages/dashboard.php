@@ -16,14 +16,21 @@
     
 <div class="main">
 <p class="heading" align="center">User Information</p>
-<label class="email_label row">Email: </label>
-<span class="email"><?php echo $email ?></span>
 
+
+<label class="email_label row">Name: </label>
+<span class="email" id="name"></span>
+
+<label class="email_label row">Email: </label>
+<span class="email"></span>
 
 <label class="pass_label row">Password: </label>
-<span class="pass"><?php echo $password ?></span>
+<span class="pass"></span>
+
 
 <a href=<?php echo base_url() . "login/logout" ?>><button class="logout ripple">LogOut</button></a>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="<?php echo base_url()."assets/js/dashboard.js"?>"></script>
 </div>
 
 </body>

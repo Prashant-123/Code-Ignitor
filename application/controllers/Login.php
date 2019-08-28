@@ -7,8 +7,8 @@ class Login extends CI_controller {
 	}
 
 	public function index() {
-		if(get_cookie('email') || get_cookie('password')) redirect(base_url() . "dashboard");
-		$this->load->view('pages/login');
+		if(get_cookie('is_logged_in')) redirect(base_url() . "dashboard");
+		else $this->load->view('pages/login');
 	}	
 
 	public function Authenticate() {
@@ -19,7 +19,7 @@ class Login extends CI_controller {
 	}
 
 	public function logout() {
-		delete_cookie('email'); delete_cookie('pass');
+		delete_cookie('email'); delete_cookie('password'); delete_cookie("is_logged_in");
 		redirect(base_url());
 	}
 }

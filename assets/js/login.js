@@ -1,3 +1,7 @@
+$('#signup').click(function() {
+    location.href = "signup"
+})
+
 $('.submit').click( function(e) {
 
     e.preventDefault();

@@ -29,7 +29,8 @@ class Login_model extends CI_Model {
 
                 set_cookie("email", $email, 3600);
                 set_cookie("password", $password, 3600);
-
+                set_cookie("is_logged_in", TRUE, 3600);
+                
             } else {
                 $success = FALSE;   
                 $message = "Authentication Failed";
