@@ -1,27 +1,38 @@
-<?php 
-class Login extends MY_Controller {
+<?php
 
-	public function __construct() {
+class Login extends MY_Controller
+{
+
+	public function __construct()
+	{
 		parent:: __construct();
 		$this->_model('login_model');
 	}
 
-	public function index() {
-		if(get_cookie('is_logged_in') == TRUE) redirect(base_url() . "dashboard");
+	public function index()
+	{
+		if (get_cookie('is_logged_in') == TRUE) redirect(base_url() . "dashboard");
 		else $this->_view('pages/login');
 	}
 
-	public function Authenticate() {
-			$email = $this->input->post('email');
-			$password = $this->input->post('password');
+	public function Authenticate()
+	{
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
 
-			echo ($this->login_model->login($email, $password));
+		$response = $this->login_model->login($email, $password);
+		echo $response;
 	}
 
-	public function logout() {
-		delete_cookie('email'); delete_cookie('password'); delete_cookie("is_logged_in");
+	public function logout()
+	{
+		delete_cookie('email');
+		delete_cookie('password');
+		delete_cookie("is_logged_in");
+
 		$this->load->library('session');
 		$this->session->sess_destroy();
+
 		redirect(base_url());
 	}
 }
