@@ -15,6 +15,7 @@ $('#submit').click( function(e) {
             location.href = response.url
         } else {
             alert(response.message);
+
         }
     })
 });

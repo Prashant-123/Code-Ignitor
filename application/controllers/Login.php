@@ -9,7 +9,7 @@ class Login extends MY_Controller {
 	public function index() {
 		if(get_cookie('is_logged_in') == TRUE) redirect(base_url() . "dashboard");
 		else $this->_view('pages/login');
-	}	
+	}
 
 	public function Authenticate() {
 			$email = $this->input->post('email');
@@ -20,6 +20,8 @@ class Login extends MY_Controller {
 
 	public function logout() {
 		delete_cookie('email'); delete_cookie('password'); delete_cookie("is_logged_in");
+		$this->load->library('session');
+		$this->session->sess_destroy();
 		redirect(base_url());
 	}
 }

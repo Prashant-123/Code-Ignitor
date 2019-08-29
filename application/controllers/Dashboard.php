@@ -24,8 +24,8 @@ class Dashboard extends CI_controller {
         $password = get_cookie('password');
 
         $response = $this->dashboard_model->get_data($email, $password);
-
         echo $response;
+
     }
 }
 

@@ -4,7 +4,7 @@ class Login_model extends CI_Model {
 
     public function __construct() {
         parent:: __construct();
-        $this->load->database();        
+        $this->load->database();
     }
 
     public function login($email, $password) {
@@ -15,7 +15,7 @@ class Login_model extends CI_Model {
 
         header('Content-type: application/json');
 
-        $sql = "SELECT password FROM students WHERE email = ?";
+        $sql = "SELECT * FROM students WHERE email = ?";
         $result = $this->db->query($sql, array($email))->result();
 
         if(sizeof($result) == 0) {
@@ -26,6 +26,9 @@ class Login_model extends CI_Model {
                 $success = TRUE;
                 $message = "User Exists";
                 $url = "dashboard";
+
+				$this->load->library('session');
+                $this->session->set_userdata('user_id', $result[0]->id);
 
                 set_cookie("email", $email, 3600);
                 set_cookie("password", $password, 3600);
