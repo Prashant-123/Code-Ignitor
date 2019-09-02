@@ -11,43 +11,10 @@ class Login_model extends CI_Model
 
 	public function login($email, $password)
 	{
+		$sql = "SELECT * FROM students WHERE email = ? AND password = ?";
 
-		$success = FALSE;
-		$message = "";
-		$url = "";
+		$result = $this->db->query($sql, array($email, $password))->result();
 
-		header('Content-type: application/json');
-
-		$sql = "SELECT * FROM students WHERE email = ?";
-		$result = $this->db->query($sql, array($email))->result();
-
-		if (sizeof($result) == 0) {
-			$success = FALSE;
-			$message = 'User doesn\'t exist';
-		} else {
-			if ($result[0]->password == $password) {
-				$success = TRUE;
-				$message = "User Exists";
-				$url = "dashboard";
-
-				$this->load->library('session');
-				$this->session->set_userdata('user_id', $result[0]->id);
-
-				set_cookie("email", $email, 3600);
-				set_cookie("password", $password, 3600);
-				set_cookie("is_logged_in", TRUE, 3600);
-
-			} else {
-				$success = FALSE;
-				$message = "Authentication Failed";
-			}
-		}
-		return json_encode(array(
-			"success" => $success,
-			"message" => $message,
-			"url" => $url
-		));
+		return $result;
 	}
 }
-
-?>

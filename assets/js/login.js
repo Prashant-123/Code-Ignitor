@@ -10,7 +10,8 @@ $('#submit').click( function(e) {
         email : $('#email-input').val(),
         password : $('#pass-input').val()
     }, response => {
-        if(response.success) {
+
+		if(response.success) {
             alert('Success');
             location.href = response.url
         } else {

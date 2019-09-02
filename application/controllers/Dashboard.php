@@ -23,14 +23,17 @@ class Dashboard extends CI_controller
 
 	public function get_data()
 	{
+		header("Content-type: application/json");
 
 		$email = get_cookie('email');
 		$password = get_cookie('password');
 
-		$response = $this->dashboard_model->get_data($email, $password);
-		echo $response;
+		if (isset($email) && isset($password)) {
+			$response = $this->dashboard_model->get_data($email, $password);
+			echo json_encode($response);
+		} else {
+			echo "Cookie Error, Login Again";
+		}
 
 	}
 }
-
-?>

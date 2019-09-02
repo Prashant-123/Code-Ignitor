@@ -1,4 +1,4 @@
-$.get('http://localhost/CI/dashboard/get_data', response => {
+$.get('/CI/dashboard/get_data', response => {
 	if (response == null) {
 		alert('Invalid Credentials, Login Again...');
 		location.href = 'login'
@@ -8,4 +8,4 @@ $.get('http://localhost/CI/dashboard/get_data', response => {
 		$('#pass-input').val(response.password)
 		$('#name-input').val(response.name)
 	}
-})
+});
