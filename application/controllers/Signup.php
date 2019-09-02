@@ -20,8 +20,15 @@ class Signup extends CI_Controller
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 
-		echo $this->user_signup->insert_student($name, $email, $password);
+		$data = array(
+			"email" => $email,
+			"password" => $password,
+			"name" => $name
+		);
+
+		$response = $this->user_signup->insert_student($data);
+
+		print_r($response);
+
 	}
 }
-
-?>

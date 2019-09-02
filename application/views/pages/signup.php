@@ -17,14 +17,13 @@
 
 
 <div class="main">
-	<form id="login-form" class="form1" action="<?php echo base_url() . "signup/submit" ?>" method="POST">
+	<form id="signUp">
 		<p class="heading" align="center">Enter your Details</p>
-
-		<input placeholder="Name" class="email" type="text" name="name" required><br>
+		<input placeholder="Name" id="name" class="name" type="text" name="name" required><br>
 		<span class="error" id="email-error"></span>
-		<input placeholder="Email" class="email" type="email" name="email" required><br>
+		<input placeholder="Email" id="email" class="email" type="email" name="email" required><br>
 		<span class="error" id="email-error"></span>
-		<input placeholder="Password" class="pass" minlength="6" type="password" name="password" required><br>
+		<input placeholder="Password" id="pass" class="pass" minlength="6" type="password" name="password" required><br>
 		<span class="error" id="pwd-error"></span>
 		<br>
 		<input placeholder="Sign Up" class="submit ripple" name="submit" type="submit">
@@ -33,5 +32,6 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="<?php echo base_url() . "assets/js/login.js" ?>"></script>
+<script src="<?php echo base_url() . "assets/plugins/jquery.validate.min.js" ?>"></script>
+<script src="<?php echo base_url() . "assets/js/sign_up.js" ?>"></script>
 </html>
