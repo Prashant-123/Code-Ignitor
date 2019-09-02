@@ -61,14 +61,9 @@ class Login extends MY_Controller
 
 	public function logout()
 	{
-		delete_cookie('email');
-		delete_cookie('password');
-		delete_cookie("is_logged_in");
+		$this->load->helper('json_helper');
 
-		$this->load->library('session');
-		$this->session->sess_destroy();
-
-		redirect(base_url());
+		logout();
 	}
 }
 

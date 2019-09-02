@@ -23,7 +23,7 @@
 
 
 <div class="container flex justify-content-center">
-	<form id="loginForm" method="POST">
+	<form id="loginForm">
 		<p class="my-5 font-weight-bold" align="center">Log In</p>
 
 		<div class="form-group">
