@@ -28,7 +28,7 @@
 		<br>
 		<input placeholder="Sign Up" class="submit ripple" name="submit" type="submit">
 	</form>
-	<!-- <label id="signup" class="signup-btn"> New User? SignUp here</label> -->
+	<label id="signup" class="signup-btn"><a href="signup.php">New User? SignUp here</a></label>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

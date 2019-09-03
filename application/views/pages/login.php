@@ -22,26 +22,28 @@
 </nav>
 
 
-<div class="container flex justify-content-center">
+<div class="container-fluid">
 	<form id="loginForm">
 		<p class="my-5 font-weight-bold" align="center">Log In</p>
 
-		<div class="form-group">
-			<div class="form-row">
+		<div class="form-group row justify-content-center">
+			<div class="form-row col-sm-3 col align-self-start">
 				<label for="email-input">Email address</label>
 				<input type="email" minlength="5" class="form-control" id="email-input" placeholder="Enter email">
 			</div>
 		</div>
 
-		<div class="form-group">
-			<div class="form-row">
+		<div class="form-group row justify-content-center">
+			<div class="form-row col-sm-3 col align-self-end">
 				<label for="pass-input">Password</label>
 				<input type="password" class="form-control" id="pass-input" placeholder="Enter Password">
 			</div>
 		</div>
-		<input class="ripple btn btn-primary col-sm-12" name="submit" type="submit" value="Submit">
+		<div class="row justify-content-center">
+			<input class="btn btn-primary" type="submit" value="Submit">
+		</div>
 	</form>
-	<label id="signup" class="signup-btn btn btn-link col-sm-12 my-4"> New User? SignUp here</label>
+	<label id="signup" class="signup-btn btn btn-link col-sm-12 my-4"><a href="signup">New User? SignUp here</a></label>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
