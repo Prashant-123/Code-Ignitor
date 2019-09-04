@@ -45,14 +45,16 @@
 		<div class="form-group">
 			<div class="form-row">
 				<label for="name-input">Name</label>
-				<input disabled type="text" class="form-control" id="name-input" placeholder="Your Name">
+				<input disabled type="text" class="form-control" id="name-input"
+					   placeholder="Your Name">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<div class="form-row">
 				<label for="email-input">Email Id</label>
-				<input disabled type="email" class="form-control" id="email-input" placeholder="Your Email" email">
+				<input disabled type="email" class="form-control" id="email-input"
+					   placeholder="Your Email" email">
 			</div>
 		</div>
 

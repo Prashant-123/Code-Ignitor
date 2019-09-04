@@ -28,33 +28,25 @@ class Login extends MY_Controller
 
 		if (sizeof($response) == 0) {
 			$success = FALSE;
-			$message = 'User doesn\'t exist';
+			$message = "Authentication Failed";
 		} else {
-			if ($response[0]->password == $password) {
-				$success = TRUE;
-				$message = "User Exists";
-				$url = "dashboard";
+			$success = TRUE;
+			$message = "User Exists";
+			$url = "dashboard";
 
-				$this->load->library('session');
-				$this->session->set_userdata('user_id', $response[0]->id);
+			$this->load->library('session');
+			$this->session->set_userdata('user_id', $response[0]->id);
 
-				set_cookie("email", $email, 3600);
-				set_cookie("password", $password, 3600);
-				set_cookie("is_logged_in", TRUE, 3600);
-
-			} else {
-				$success = FALSE;
-				$message = "Authentication Failed";
-			}
+			set_cookie("email", $email, 3600);
+			set_cookie("password", $password, 3600);
+			set_cookie("is_logged_in", TRUE, 3600);
 		}
 
-		header("Content-type: application/json");
-
-		print_r(json_encode(array(
+		echo json_encode(array(
 			"success" => $success,
 			"message" => $message,
 			"url" => $url
-		)));
+		));
 
 
 	}

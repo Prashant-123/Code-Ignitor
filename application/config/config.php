@@ -24,8 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/CI/';
-$config['assets'] = 'http://localhost/CI/assets/';
+$config['base_url'] = 'http://192.168.31.169/CI/';
+$config['assets'] = 'http://192.168.31.169/CI/assets/';
 
 /*
 |--------------------------------------------------------------------------

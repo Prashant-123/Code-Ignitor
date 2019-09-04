@@ -1,6 +1,13 @@
-$("#loginForm").validate();
+$('#signup').click(function () {
+	location.href = "signup"
+});
 
 $("#loginForm").validate({
+	rules: {
+		email: "required",
+		password: "required"
+	},
+
 	submitHandler: function (form) {
 		$.ajax({
 			type: "POST",
@@ -10,10 +17,11 @@ $("#loginForm").validate({
 				password: $('#pass-input').val(),
 			}),
 			success: function (res) {
-				if (res.success) {
-					location.href = 'dashboard'
+				const response = JSON.parse(res);
+				if (response.success) {
+					location.href = response.url
 				} else {
-					alert("Authentication Failed");
+					alert(response.message);
 				}
 			}
 		});
